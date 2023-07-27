@@ -1,17 +1,17 @@
 function deretKaskus(n) {
-  let kelLima = [];
+  let kelipatan3 = [];
   for (let i = 0; i < n; i++) {
     let kalkulasi = 3 * (i + 1);
-    kelLima.push(kalkulasi);
-    if (kelLima[i] % 5 === 0 && kelLima[i] % 6 === 0) {
-      kelLima[i] = "KASKUS";
-    } else if (kelLima[i] % 5 === 0) {
-      kelLima[i] = "KAS";
-    } else if (kelLima[i] % 6 === 0) {
-      kelLima[i] = "KUS";
+    kelipatan3.push(kalkulasi);
+    if (kelipatan3[i] % 5 === 0 && kelipatan3[i] % 6 === 0) {
+      kelipatan3[i] = "KASKUS";
+    } else if (kelipatan3[i] % 5 === 0) {
+      kelipatan3[i] = "KAS";
+    } else if (kelipatan3[i] % 6 === 0) {
+      kelipatan3[i] = "KUS";
     }
   }
-  return kelLima;
+  return kelipatan3;
 }
 
 console.log(deretKaskus(10));
