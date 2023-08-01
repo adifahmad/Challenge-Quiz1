@@ -5,8 +5,7 @@ function sentencesManipulation(sentence) {
   for (let i = 0; i < result.length; i++) {
     if (vocal.includes(result[i].charAt(0)) == true) {
       output += result[i] + " ";
-    }
-    if (vocal.includes(result[i].charAt(0)) == false) {
+    } else if (vocal.includes(result[i].charAt(0)) == false) {
       output += result[i].slice(1) + result[i].charAt(0) + "nyo" + " ";
     }
   }
