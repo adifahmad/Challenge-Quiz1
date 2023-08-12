@@ -1,15 +1,14 @@
-const fs = require("fs");
-const data = fs.readFileSync("data.json", "utf-8");
-const readline = require("node:readline");
-const { skip } = require("node:test");
-const quest = JSON.parse(data);
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-  prompt: "Jawaban:",
-});
-
 if (process.argv[2]) {
+  const fs = require("fs");
+  const data = fs.readFileSync(`${process.argv[2]}`, "utf-8");
+  const quest = JSON.parse(data);
+  const readline = require("node:readline");
+  const { skip } = require("node:test");
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+    prompt: "Jawaban:",
+  });
   console.log(
     "Selamat datang di permainan Tebak-tebakan, kamu akan diberikan pertanyaan dari file ini 'data.json'.\n Untuk bermain, jawablah dengan jawaban yang sesuai\n ",
     "Gunakan 'skip' untuk menangguhkan pertanyaannya, dan di akhir pertanyaan akan ditanya lagi\n"
