@@ -37,8 +37,11 @@ if (!process.argv[2] || process.argv[2] === "help") {
   fs.writeFileSync("todo.json", JSON.stringify(quest), "utf-8");
   console.log(`${process.argv.slice(3).join(" ")} status telah ditambahkan`);
 } else if (process.argv[2] === "delete") {
-  quest.splice(process.argv[3], 1);
-  console.log(`${quest.splice(process.argv[3], 1)}telah dihapus dari daftar`);
+  quest.splice(process.argv[3 - 1], 1);
+  console.log(
+    `${quest[process.argv[3] - 1].content} telah dihapus dari daftar`
+  );
+  fs.writeFileSync("todo.json", JSON.stringify(quest), "utf-8");
 } else if (process.argv[2] === "complete") {
   quest[process.argv[3] - 1].complete = true;
   console.log(`${quest[process.argv[3] - 1].content} telah di complete`);
