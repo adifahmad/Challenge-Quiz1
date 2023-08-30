@@ -1,8 +1,6 @@
 const fs = require("fs");
 const data = fs.readFileSync(`todo.json`, "utf-8");
 const quest = JSON.parse(data);
-const readline = require("node:readline");
-const { skip } = require("node:test");
 
 let counter = quest.length + 1;
 
